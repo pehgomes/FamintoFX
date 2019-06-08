@@ -43,6 +43,8 @@ public class ClienteController {
 	@FXML 
 	public void initialize() {
 		clienteDao = new DAO<Cliente, Long>(ConnectionFactory.currentManager(), Cliente.class);
+		textFieldCodigo.setText("1");
+		textFieldCodigo.setDisable(true);
 		tabelaConfig();
 	}
 
@@ -70,6 +72,12 @@ public class ClienteController {
 	public void ativo(ActionEvent event) {
 		System.out.println("");
 	}
+
+	@FXML
+	public void sair(ActionEvent event) {
+		System.exit(0);
+	}
+
 	
 	public void tabelaConfig() {
 		tableView = new TableViewController<Cliente>(Cliente.class, "id", "nome", "Endereco");
