@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.crud.ClienteController">
+   <center>
+      <GridPane fx:id="grid_pane" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </center>
+   <left>
+      <Pane prefHeight="384.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="textFieldNome" layoutX="93.0" layoutY="54.0" prefHeight="26.0" prefWidth="210.0" />
+            <TextField fx:id="textFieldEndereco" layoutX="93.0" layoutY="84.0" prefHeight="25.0" prefWidth="210.0" />
+            <Button fx:id="btnAdd" layoutX="133.0" layoutY="333.0" mnemonicParsing="false" onAction="#salvarCliente" prefHeight="25.0" prefWidth="152.0" text="Salvar" />
+            <Label layoutX="23.0" layoutY="59.0" text="Nome" />
+            <Label layoutX="23.0" layoutY="88.0" text="Endereço" />
+            <Label layoutX="14.0" layoutY="14.0" text="Cadastro de Cliente" textFill="#150add">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="155.0" text="Ativo" />
+            <CheckBox fx:id="checkbox" layoutX="93.0" layoutY="155.0" mnemonicParsing="false" onAction="#ativo" />
+            <Button fx:id="btnSair" layoutX="320.0" layoutY="333.0" mnemonicParsing="false" onAction="#sair" prefHeight="25.0" prefWidth="152.0" text="Sair" />
+            <Label layoutX="22.0" layoutY="119.0" text="Cod." />
+            <TextField fx:id="textFieldCodigo" layoutX="93.0" layoutY="115.0" prefHeight="25.0" prefWidth="60.0" />
+         </children></Pane>
+   </left>
+</BorderPane>

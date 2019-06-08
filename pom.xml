@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.unifor.poo</groupId>
+  <artifactId>faminto_maven</artifactId>
+  <version>0.0.1</version>
+  
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<dependencies>
+		<!-- Instruções:
+		   Instalar o "SceneBuilder* java 8" em seu PC e substituir
+		   o caminho do seu jfxrt.jar na dependência <com.oracle> <javafx> seguinte.
+           exemplo: C:\\Java\\SceneBuilder64\\runtime\\lib\\ext\\jfxrt.jar
+                    Se já instalou, ou se já tem a biblioteca "compatível" jfxrt.jar 
+                    no seu JAVA_HOME, podes também usá-la.
+             
+           Além disso: em META-INF/persistence.xml definir o banco (atualmente faminto) 
+                       e o user/senha de acesso ao mysql
+           
+           *(SceneBuilder: https://gluonhq.com/products/scene-builder/)
+		-->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>javafx</artifactId>
+			<version>2.2.3</version>
+			<scope>system</scope>
+			<systemPath>C:\\Users\\alunot5\\AppData\\Local\\SceneBuilder\\runtime\\lib\\ext\\jfxrt.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.6.Final</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.6.Final</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate.javax.persistence</groupId>
+		    <artifactId>hibernate-jpa-2.1-api</artifactId>
+		    <version>1.0.0.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>5.1.15</version>
+		</dependency>
+	</dependencies>
+</project>
