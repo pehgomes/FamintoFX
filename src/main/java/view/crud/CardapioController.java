@@ -18,8 +18,7 @@ import model.entidade.Bebida;
 import model.entidade.ItemCardapio;
 import util.ConnectionFactory;
 
-public class CardapioController {
-	// Botoes e textFields
+public class CardapioController extends AbstractController {
 	@FXML
 	protected TextField textFieldCodigo;
 	@FXML
@@ -44,6 +43,12 @@ public class CardapioController {
 		tabelaConfig();
 		textFieldCodigo.getStyleClass().add("desabilitado");
 		textFieldCodigo.setDisable(true);
+	}
+	
+	@FXML
+	public void voltar(ActionEvent actionEvent) {
+		// TODO Auto-generated method stub
+		super.voltar(actionEvent);
 	}
 
 	public void tabelaConfig() {

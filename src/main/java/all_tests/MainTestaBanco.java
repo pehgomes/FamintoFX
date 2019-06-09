@@ -18,10 +18,10 @@ public class MainTestaBanco {
 		DAO<Cliente,Long> clienteDao = new DAO<Cliente,Long>(ConnectionFactory.currentManager(), Cliente.class);
 		DAO<Entregador,Long> entregadorDao = new DAO<Entregador,Long>(ConnectionFactory.currentManager(), Entregador.class);
 		
-		Cliente francisco = new Cliente("Francisco", "Rua A, 5 Apto 8");
-		Cliente maria = new Cliente("Maria", "Rua B, 6 Apto 9");
-		Cliente ana = new Cliente("Ana", "Rua C, 7 Apto 10");
-		Cliente paula = new Cliente("Paula", "Rua D, 8 Apto 11");
+		Cliente francisco = new Cliente("Francisco", "Rua A, 5 Apto 8", "", 1);
+		Cliente maria = new Cliente("Maria", "Rua B, 6 Apto 9", "", 2);
+		Cliente ana = new Cliente("Ana", "Rua C, 7 Apto 10", "", 3);
+		Cliente paula = new Cliente("Paula", "Rua D, 8 Apto 11", "", 4);
 		
 		Entregador jose = new Entregador("Jose Motoboy", "YZK-1232");
 		Entregador manoel = new Entregador("Manoel Motoboy", "PPI-8549");

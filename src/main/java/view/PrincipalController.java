@@ -15,7 +15,7 @@ public class PrincipalController {
 		modal.initModality(Modality.APPLICATION_MODAL);
 		try {
 			BorderPane janela = (BorderPane) FXMLLoader.load(getClass().getResource("crud/CardapioView.fxml"));
-			Scene cenario = new Scene(janela, 800, 400);
+			Scene cenario = new Scene(janela, 900, 400);
 			cenario.getStylesheets().add(getClass().getResource("design.css").toExternalForm());
 			modal.setScene(cenario);
 			modal.setTitle("Cadastro de Cardapios");
@@ -32,7 +32,7 @@ public class PrincipalController {
 		modal.initModality(Modality.APPLICATION_MODAL);
 		try {
 			BorderPane janela = (BorderPane) FXMLLoader.load(getClass().getResource("crud/BebidaView.fxml"));
-			Scene cenario = new Scene(janela, 800, 400);
+			Scene cenario = new Scene(janela, 900, 400);
 			cenario.getStylesheets().add(getClass().getResource("design.css").toExternalForm());
 			modal.setScene(cenario);
 			modal.setTitle("Cadastro de Bebida");
@@ -49,11 +49,12 @@ public class PrincipalController {
 		modal.initModality(Modality.APPLICATION_MODAL);
 		try {
 			BorderPane janela = (BorderPane) FXMLLoader.load(getClass().getResource("crud/ClienteView.fxml"));
-			Scene cenario = new Scene(janela, 800, 400);
-			cenario.getStylesheets().add(getClass().getResource("design.css").toExternalForm());
-			modal.setScene(cenario);
-			modal.setTitle("Cadastro de Cardapios");
-			modal.showAndWait();
+			Main.mudarVisao(janela);
+//			Scene cenario = new Scene(janela, 900, 400);
+//			cenario.getStylesheets().add(getClass().getResource("design.css").toExternalForm());
+//			modal.setScene(cenario);
+//			modal.setTitle("Cadastro de Cardapios");
+//			modal.showAndWait();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
