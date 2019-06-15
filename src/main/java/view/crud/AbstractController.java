@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 import view.Main;
+import view.PrincipalController;
 
 public abstract class AbstractController {
 
@@ -18,6 +19,8 @@ public abstract class AbstractController {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	
 	protected abstract void initialize();
 

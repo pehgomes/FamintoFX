@@ -12,8 +12,8 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.crud.ClienteController">
-   <center>
-      <Pane prefHeight="384.0" prefWidth="582.0" BorderPane.alignment="CENTER">
+   <left>
+      <Pane prefHeight="384.0" prefWidth="5484.0" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="textFieldNome" layoutX="93.0" layoutY="54.0" prefHeight="26.0" prefWidth="210.0" />
             <TextField fx:id="textFieldEndereco" layoutX="93.0" layoutY="84.0" prefHeight="25.0" prefWidth="210.0" />
@@ -42,6 +42,7 @@
             <PointLight color="CHARTREUSE" layoutX="339.0" layoutY="156.0" lightOn="true" />
             <Label layoutX="340.0" layoutY="88.0" text="Telefone" />
             <TextField fx:id="textFieldTelefone" layoutX="393.0" layoutY="84.0" prefHeight="25.0" prefWidth="102.0" />
+            <Button fx:id="btnRemover" layoutX="578.0" layoutY="222.0" mnemonicParsing="false" onAction="#remover" text="Remover" />
          </children></Pane>
-   </center>
+   </left>
 </BorderPane>

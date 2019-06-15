@@ -47,7 +47,7 @@ public class BebidaController extends AbstractController {
 		textFieldCodigo.getStyleClass().add("desabilitado");
 		textFieldCodigo.setDisable(true);
 	}
-	
+
 	@FXML
 	public void voltar(ActionEvent actionEvent) {
 		super.voltar(actionEvent);
@@ -67,11 +67,11 @@ public class BebidaController extends AbstractController {
 
 	private void tableEventUpdate() {
 		ItemCardapio bebida = tableView.getSelectionModel().getSelectedItem();
-		if(bebida!=null) {
+		if (bebida != null) {
 			textFieldCodigo.setText("" + bebida.getId());
 			textFieldNome.setText(bebida.getNome());
 			textFieldPreco.setText("" + bebida.getPreco());
-			textFieldQtd.setText("" + ((Bebida)bebida).getQtd());
+			textFieldQtd.setText("" + ((Bebida) bebida).getQtd());
 		}
 	}
 

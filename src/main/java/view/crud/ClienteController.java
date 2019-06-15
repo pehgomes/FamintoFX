@@ -37,6 +37,9 @@ public class ClienteController extends AbstractController {
 
 	@FXML
 	protected Button btnAdd;
+	
+	@FXML
+	protected Button btnRemover;
 
 	@FXML
 	protected GridPane grid_pane;
@@ -77,6 +80,16 @@ public class ClienteController extends AbstractController {
 	@FXML
 	public void voltar(ActionEvent event) {
 		super.voltar(event);
+	}
+	
+	@FXML
+	public void remover(ActionEvent event) {
+		if (textFieldCodigo.getText() != null && !textFieldCodigo.getText().isEmpty()) {
+			Cliente cliente = clienteDao.load(Long.parseLong(textFieldCodigo.getText())) ;
+			clienteDao.delete(cliente);
+			chamarAlerta("CLIENTE DELETADO DA BASE.");
+		}
+		updateTable();
 	}
 
 	private void updateTable() {
@@ -119,6 +132,8 @@ public class ClienteController extends AbstractController {
 			textFieldCodigo.setText("" + cliente.getId());
 			textFieldNome.setText(cliente.getNome());
 			textFieldEndereco.setText(cliente.getEndereco());
+			textFieldEndereco.setText(cliente.getEndereco());
+			textFieldIdade.setText(cliente.getEndereco());
 		}
 	}
 
@@ -134,6 +149,13 @@ public class ClienteController extends AbstractController {
 			isValido = false;
 		}
 		return isValido;
+	}
+	
+	private void chamarAlerta (String text) {
+		Alert a = new Alert(AlertType.NONE);
+		a.setAlertType(AlertType.WARNING);
+		a.setContentText(text);
+		a.show();
 	}
 
 }

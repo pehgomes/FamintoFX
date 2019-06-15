@@ -1,5 +1,7 @@
 package view;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,19 +12,7 @@ import javafx.stage.Stage;
 public class PrincipalController {
 	@FXML
 	public void menuCardapioClick() {
-		Stage modal = new Stage();
-		modal.initOwner(new Stage());
-		modal.initModality(Modality.APPLICATION_MODAL);
-		try {
-			BorderPane janela = (BorderPane) FXMLLoader.load(getClass().getResource("crud/CardapioView.fxml"));
-			Scene cenario = new Scene(janela, 900, 400);
-			cenario.getStylesheets().add(getClass().getResource("design.css").toExternalForm());
-			modal.setScene(cenario);
-			modal.setTitle("Cadastro de Cardapios");
-			modal.showAndWait();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		obterJanela("crud/CardapioView.fxml");
 	}
 
 	@FXML
@@ -58,6 +48,26 @@ public class PrincipalController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private BorderPane obterJanela(String nomefxml) {
+		Stage modal = new Stage();
+		modal.initOwner(new Stage());
+		modal.initModality(Modality.APPLICATION_MODAL);
+
+		BorderPane janela = null;
+		try {
+			janela = (BorderPane) FXMLLoader.load(getClass().getResource(nomefxml));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Scene cenario = new Scene(janela, 900, 400);
+		cenario.getStylesheets().add(getClass().getResource("design.css").toExternalForm());
+		modal.setScene(cenario);
+		modal.setTitle("Cadastro de Cardapios");
+		modal.showAndWait();
+		return janela;
+
 	}
 
 	@FXML

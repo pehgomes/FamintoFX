@@ -51,7 +51,7 @@ public class CardapioController extends AbstractController {
 		super.voltar(actionEvent);
 	}
 
-	public void tabelaConfig() {
+	protected void tabelaConfig() {
 		tableView = new TableViewController<ItemCardapio>(ItemCardapio.class, "id", "nome", "preco");
 		grid_pane.getChildren().add(tableView);
 		tableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
