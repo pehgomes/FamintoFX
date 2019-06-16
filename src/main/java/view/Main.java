@@ -17,7 +17,7 @@ public class Main extends Application {
 		try {
 			stageApplication = primaryStage;
 			BorderPane janela = (BorderPane) FXMLLoader.load(getClass().getResource("PrincipalView.fxml"));
-			Scene cenario = new Scene(janela, 900, 400);
+			Scene cenario = new Scene(janela, 1064, 1064);
 			cenario.getStylesheets().add(getClass().getResource("design.css").toExternalForm());
 			stageApplication.setScene(cenario);
 			stageApplication.setTitle("FamintoFX 1.0");
@@ -28,7 +28,7 @@ public class Main extends Application {
 	}
 	
 	public static void mudarVisao(Pane pane) {
-		Scene cenario = new Scene(pane, 900, 400);
+		Scene cenario = new Scene(pane, 1064, 1064);
 		cenario.getStylesheets().add(Main.class.getResource("design.css").toExternalForm());
 		stageApplication.setScene(cenario);
 		stageApplication.show();

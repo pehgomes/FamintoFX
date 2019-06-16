@@ -7,8 +7,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -40,6 +38,12 @@ public class ClienteController extends AbstractController {
 	
 	@FXML
 	protected Button btnRemover;
+	
+	@FXML
+	protected Button btnAtualizar;
+	
+	@FXML
+	protected Button btnLimpar;
 
 	@FXML
 	protected GridPane grid_pane;
@@ -63,10 +67,7 @@ public class ClienteController extends AbstractController {
 	@FXML
 	public void salvarCliente(ActionEvent event) {
 		if (!camposObrigatoriosPreenchidos()) {
-			Alert a = new Alert(AlertType.NONE);
-			a.setAlertType(AlertType.WARNING);
-			a.setContentText("CAMPOS OBRIGATÓRIOS !");
-			a.show();
+			chamarAlerta("CAMPOS OBRIGATÓRIOS !");
 			return;
 		}
 		Cliente cliente = new Cliente(textFieldNome.getText(), textFieldEndereco.getText(), textFieldTelefone.getText(),
@@ -91,6 +92,22 @@ public class ClienteController extends AbstractController {
 		}
 		updateTable();
 	}
+	
+	@FXML
+	public void atualizar(ActionEvent event) {
+		if (camposObrigatoriosPreenchidos()) {
+			Cliente cliente = clienteDao.load(Long.parseLong(textFieldCodigo.getText()));
+			cliente.setEndereco(textFieldEndereco.getText());
+			cliente.setNome(textFieldNome.getText());
+			cliente.setTelefone(textFieldTelefone.getText());
+			cliente.setIdade(Integer.parseInt(textFieldIdade.getText()));
+
+			clienteDao.merge(cliente);
+			updateTable();
+		} else {
+			chamarAlerta("CAMPOS OBRIGATÓRIOS NÃO PREENCHIDOS");
+		}
+	}
 
 	private void updateTable() {
 		tableView.getItems().clear();
@@ -111,12 +128,17 @@ public class ClienteController extends AbstractController {
 	}
 
 	@FXML
-	public void sair(ActionEvent event) {
-		System.exit(0);
+	public void limpar(ActionEvent event) {
+		textFieldCodigo.setText("");
+		textFieldEndereco.setText("");
+		textFieldIdade.setText("");
+		textFieldNome.setText("");
+		textFieldTelefone.setText("");
+		
 	}
 
 	public void tabelaConfig() {
-		tableView = new TableViewController<Cliente>(Cliente.class, "id", "nome", "Endereco");
+		tableView = new TableViewController<Cliente>(Cliente.class, "nome", "endereco", "telefone", "idade");
 		grid_pane.getChildren().add(tableView);
 		tableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {
@@ -132,14 +154,14 @@ public class ClienteController extends AbstractController {
 			textFieldCodigo.setText("" + cliente.getId());
 			textFieldNome.setText(cliente.getNome());
 			textFieldEndereco.setText(cliente.getEndereco());
-			textFieldEndereco.setText(cliente.getEndereco());
-			textFieldIdade.setText(cliente.getEndereco());
+			textFieldIdade.setText(cliente.getIdade() != null ? cliente.getIdade().toString() : "");
+			textFieldTelefone.setText(cliente.getTelefone());
 		}
 	}
 
 	private boolean camposObrigatoriosPreenchidos() {
 		boolean isValido = true;
-		if (textFieldTelefone.getText().isEmpty()) {
+		if (textFieldTelefone.getText() == null || textFieldTelefone.getText().isEmpty()) {
 			isValido = false;
 		} else if (textFieldIdade.getText().isEmpty()) {
 			isValido = false;
@@ -149,13 +171,6 @@ public class ClienteController extends AbstractController {
 			isValido = false;
 		}
 		return isValido;
-	}
-	
-	private void chamarAlerta (String text) {
-		Alert a = new Alert(AlertType.NONE);
-		a.setAlertType(AlertType.WARNING);
-		a.setContentText(text);
-		a.show();
 	}
 
 }

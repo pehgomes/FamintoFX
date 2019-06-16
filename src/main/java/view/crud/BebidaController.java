@@ -35,6 +35,9 @@ public class BebidaController extends AbstractController {
 	@FXML
 	protected Button btnNew;
 	@FXML
+	protected Button btnBebida;
+
+	@FXML
 	protected GridPane grid_pane;
 
 	protected TableViewController<Bebida> tableView;

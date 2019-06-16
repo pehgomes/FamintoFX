@@ -30,6 +30,7 @@
             <Label layoutX="12.0" layoutY="122.0" text="Preco" />
             <TextField fx:id="textFieldQtd" layoutX="94.0" layoutY="150.0" prefHeight="26.0" prefWidth="83.0" />
             <Label layoutX="12.0" layoutY="155.0" text="Quantidade" />
+            <Button fx:id="btnBebida" layoutX="265.0" layoutY="190.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
          </children></Pane>
    </top>
    <center>

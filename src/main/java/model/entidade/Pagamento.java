@@ -33,7 +33,7 @@ public class Pagamento {
 	@Override
 	public String toString() {
 		if(pedido==null) return "Pagamento[Sem Pedido vinculado]";
-		return "Pagamento [id=" + id + ", valor=" + pedido.total() + "]";
+		return "R$ " + pedido.total();
 	}
 	@Override
 	public boolean equals(Object obj) {

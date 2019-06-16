@@ -94,7 +94,7 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente[" + nome + "," + endereco + "," + ativo + "]";
+		return   nome + "," + endereco + "," + ativo ;
 	}
 
 	@Override

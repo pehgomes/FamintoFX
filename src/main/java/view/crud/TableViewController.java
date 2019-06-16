@@ -30,6 +30,7 @@ public class TableViewController<T> extends TableView<T> {
 				getColumns().add(tc);
 			}			
 		});
+		System.out.println();
 	}
 	private boolean contem(String[] colunas, String nome) {
 		for (String s : colunas)
