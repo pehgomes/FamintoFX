@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1064.0" maxWidth="1064.0" minHeight="1064.0" minWidth="1064.0" prefHeight="1064.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.view.PrincipalController">
+   <right>
+      <Pane maxHeight="1064.0" maxWidth="1379.0" minHeight="1064.0" minWidth="1064.0" prefHeight="1064.0" prefWidth="1139.0" style="-fx-background-color: linear-gradient(to bottom, #136a8a, #267871);;" styleClass="panel" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="353.0" layoutY="554.0" mnemonicParsing="false" onAction="#menuEntregadorClick" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: #212529; -fx-font-family: Montserrat,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;" text="ENTREGADORES" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Lucida Console" size="12.0" />
+               </font></Button>
+            <Button layoutX="130.0" layoutY="554.0" mnemonicParsing="false" onAction="#menuBebidaClick" prefHeight="30.0" prefWidth="170.0" style="-fx-border-radius: 100%; -fx-background-color: #212529; -fx-font-family: Montserrat,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;" text="ESTOQUE" textFill="#f5f5f5">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="554.0" layoutY="554.0" mnemonicParsing="false" onAction="#menuClienteClick" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: #212529; -fx-font-family: Montserrat,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;" text="CLIENTES" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="765.0" layoutY="554.0" mnemonicParsing="false" onAction="#menuPedidosClick" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: #212529; -fx-font-family: Montserrat,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;" text="PEDIDOS" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="404.0" layoutY="649.0" mnemonicParsing="false" onAction="#menuFecharClick" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #212529; -fx-font-family: Montserrat,-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,&quot;Helvetica Neue&quot;,Arial,&quot;Noto Sans&quot;,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;" text="FECHAR" textFill="WHITE">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+         </children>
+      </Pane>
+   </right>
+</BorderPane>

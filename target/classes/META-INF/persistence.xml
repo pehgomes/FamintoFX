@@ -5,15 +5,15 @@
         <!--  
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         -->
-		<class>model.entidade.ItemCardapio</class>
-		<class>model.entidade.Bebida</class>
-		<class>model.entidade.Lanche</class>
-		<class>model.entidade.ItemPedido</class>
-		<class>model.entidade.Pedido</class>
-		<class>model.entidade.Cliente</class>
-		<class>model.entidade.Cheque</class>
-		<class>model.entidade.Entregador</class>
-		<class>model.entidade.Pagamento</class>
+		<class>br.com.model.ItemCardapio</class>
+		<class>br.com.model.Bebida</class>
+		<class>br.com.model.Lanche</class>
+		<class>br.com.model.ItemPedido</class>
+		<class>br.com.model.Pedido</class>
+		<class>br.com.model.Cliente</class>
+		<class>br.com.model.Cheque</class>
+		<class>br.com.model.Entregador</class>
+		<class>br.com.model.Pagamento</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/faminto" />
