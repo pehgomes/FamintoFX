@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.text.TextFlow?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.controller.PedidoController">
-   <top>
+   <left>
       <Pane fx:id="txtAddItem" prefHeight="575.0" prefWidth="1145.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="32.0" layoutY="9.0" text="Pedidos" textFill="#3e1bc9">
@@ -30,8 +31,8 @@
             <ComboBox fx:id="comboboxItemPedido" layoutX="123.0" layoutY="312.0" prefHeight="25.0" prefWidth="237.0" />
             <Button fx:id="btnAdd" layoutX="431.0" layoutY="312.0" mnemonicParsing="false" onAction="#addItemListView" text="add" />
             <TextFlow fx:id="nota" layoutX="586.0" layoutY="16.0" opacity="0.56" prefHeight="384.0" prefWidth="305.0" style="-fx-background-color: #FBFCAF; -fx-border-color: #040400; -fx-border-style: dotted; -fx-border-width: 2.3;" />
-            <Button layoutX="123.0" layoutY="371.0" mnemonicParsing="false" onAction="#finalizar" text="Finalizar" />
-            <Button layoutX="211.0" layoutY="371.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+            <Button layoutX="130.0" layoutY="375.0" mnemonicParsing="false" onAction="#finalizar" text="Finalizar" />
+            <Button layoutX="218.0" layoutY="375.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
             <GridPane fx:id="grid_pane" layoutY="425.0" prefHeight="151.0" prefWidth="1145.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -41,7 +42,10 @@
               </rowConstraints>
             </GridPane>
             <Label layoutX="19.0" layoutY="186.0" text="Itens do Pedido" />
+            <Button fx:id="btnRemove" layoutX="290.0" layoutY="375.0" mnemonicParsing="false" onAction="#btnRemoveClick" text="Remover" />
+            <Label layoutX="21.0" layoutY="348.0" text="ID" />
+            <TextField fx:id="textFieldID" layoutX="123.0" layoutY="344.0" prefHeight="25.0" prefWidth="238.0" />
          </children>
       </Pane>
-   </top>
+   </left>
 </BorderPane>

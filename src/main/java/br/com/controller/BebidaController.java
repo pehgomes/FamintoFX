@@ -107,6 +107,7 @@ public class BebidaController extends AbstractController {
 	@FXML
 	public void btnAddClick(ActionEvent event) {
 		Bebida bebida = getBebida();
+		System.out.println("SALVANDO\n  "+ bebida);
 		dao.save(bebida);
 		updateTableView();
 		textFieldCodigo.setText(bebida.getId() + "");

@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import javax.persistence.PersistenceException;
+import javax.swing.JOptionPane;
+
 import br.com.dao.DAO;
 import br.com.model.Bebida;
 import br.com.model.Cliente;
@@ -17,11 +20,14 @@ import br.com.util.ConnectionFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -57,12 +63,18 @@ public class PedidoController extends AbstractController {
 
 	@FXML
 	public Button btnAdd;
+	
+	@FXML
+	protected Button btnRemove;
 
 	@FXML
 	public TextFlow nota;
 
 	@FXML
 	protected GridPane grid_pane;
+	
+	@FXML
+	private TextField textFieldID;
 
 	protected TableViewController<Pedido> tableView;
 
@@ -125,6 +137,47 @@ public class PedidoController extends AbstractController {
 	}
 	
 	@FXML
+	public void btnRemoveClick(ActionEvent event) {
+		try {
+			if (!textFieldID.getText().equals("")) {
+				Pedido bebida = getPedido();
+				pedidoDao.delete(bebida);
+				updateTableView();
+				textFieldID.setText("");
+			} else {
+				JOptionPane.showMessageDialog(null, "Codigo nullo!");
+			}
+		} catch (PersistenceException e) {
+			chamarAlerta(e.getMessage());
+		}
+	}
+	
+	public void updateTableView() {
+		tableView.getItems().remove(getPedido());
+	}
+	
+	public Pedido getPedido() {
+		Long id = -1l;
+
+		try {
+			id = Long.parseLong(textFieldID.getText());
+		} catch (Exception e) {
+		}
+
+		Pedido pedido = null;
+		if (id >= 0)
+			pedido = pedidoDao.load(id);
+		if (pedido == null)
+			pedido = new Pedido();
+
+		if (id >= 0)
+			pedido.setId(id);
+		return pedido;
+	}
+
+
+	
+	@FXML
 	public void addItemListView(ActionEvent event) {
 		if (!isAberto) {
 			return;
@@ -172,7 +225,21 @@ public class PedidoController extends AbstractController {
 	public void tabelaConfig() {
 		tableView = new TableViewController<Pedido>(Pedido.class, "cliente", "entregador", "pagamento", "data", "pendenteEntrega");
 		grid_pane.getChildren().add(tableView);
+		tableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent event) {
+				if (event.getClickCount() == 1)
+					tableEventUpdate();
+			}
+		});
 	}
+	
+	private void tableEventUpdate() {
+		Pedido pedido = tableView.getSelectionModel().getSelectedItem();
+		if (pedido != null) {
+			textFieldID.setText("" + pedido.getId());
+		}
+	}
+
 	
 	private void updateTable() {
 		tableView.getItems().clear();

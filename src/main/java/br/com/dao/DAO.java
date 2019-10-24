@@ -22,7 +22,7 @@ public class DAO<T, I extends Serializable> {
 		System.out.println("lendo " + persistentClass + " com id " + id);
 		return (T) manager.find(persistentClass, id);
 	}
-
+	
 	public void save(T t) {
 		manager.getTransaction().begin();
 		System.out.println("Salvando " + t);

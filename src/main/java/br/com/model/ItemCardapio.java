@@ -37,10 +37,6 @@ public class ItemCardapio {
 	public void setPreco(double preco) { this.preco = preco; }
 	
 	@Override
-	public String toString() {
-		return nome + "(" + this.preco +")";
-	}
-	@Override
 	public boolean equals(Object obj) {
 		if(obj instanceof ItemCardapio) {
 			return (((ItemCardapio)obj).id==this.id);

@@ -32,9 +32,17 @@ public class Bebida extends ItemCardapio {
 			this.qtd = this.qtd - visitor.getQuantidade();
 		return liberado;
 	}
-
+	
 	@Override
-	public String toString() {
-		return nome + "(" + this.preco + ", " + this.qtd + ")";
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return super.getNome();
 	}
+	
+	@Override
+	public void setNome(String nome) {
+		// TODO Auto-generated method stub
+		super.setNome(nome);
+	}
+
 }

@@ -139,11 +139,6 @@ public class Pedido {
 	}
 
 	@Override
-	public String toString() {
-		return "Pedido(id=" + id + ", data=" + data + ")";
-	}
-
-	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Pedido) {
 			return (((Pedido) obj).id == this.id);

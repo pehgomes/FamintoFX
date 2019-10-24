@@ -6,7 +6,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         -->
 		<class>br.com.model.ItemCardapio</class>
-		<class>br.com.model.Bebida</class>
+		<class>br.com.model.BebidaADTJ</class>
 		<class>br.com.model.Lanche</class>
 		<class>br.com.model.ItemPedido</class>
 		<class>br.com.model.Pedido</class>
